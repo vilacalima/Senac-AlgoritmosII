@@ -6,6 +6,7 @@ public class Pessoa {
 	private int idade;
 	private double altura;
 	private double peso;
+	private int passos;
 	
 	public Pessoa() {
 	}
@@ -34,4 +35,8 @@ public class Pessoa {
 		this.peso = peso;
 	}
 	
+	public int andar() {
+		passos++;
+		return passos;
+	}
 }
