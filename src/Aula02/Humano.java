@@ -1,4 +1,4 @@
-package Senac;
+package Aula02;
 
 public interface Humano {
 
