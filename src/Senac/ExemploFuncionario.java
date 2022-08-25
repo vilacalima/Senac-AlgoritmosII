@@ -1,6 +1,7 @@
 package Senac;
 
 public class ExemploFuncionario {
+	
 	public static void main(String[] args) {
 		
 		Funcionario funcionario = new Funcionario();
@@ -9,6 +10,7 @@ public class ExemploFuncionario {
 		funcionario.setAltura(1.75);
 		funcionario.setPeso(60.0);
 		funcionario.setSalario(100000.00);
+		
 		System.out.println(funcionario.getNome());
 		System.out.println(funcionario.getIdade());
 		System.out.println(funcionario.getAltura());

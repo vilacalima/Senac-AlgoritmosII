@@ -1,6 +1,7 @@
 package Senac;
 
 public class Funcionario extends Pessoa {
+	
 	private double salario;
 	private String cargo;
 
@@ -21,5 +22,10 @@ public class Funcionario extends Pessoa {
 
 	public void setCargo(String cargo) {
 		this.cargo = cargo;
+	}
+	
+	@Override
+	public void falar(String frase) {
+		System.out.println("Funcionario: " + frase);
 	}
 }
