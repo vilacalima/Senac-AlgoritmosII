@@ -11,6 +11,7 @@ import java.util.UUID;
 public class ArquivosDiretoriosWritersOutputStreams {
 
 	public static void main(String[] args) throws Exception {
+		
 		Path arquivo = Path.of("./arquivo.txt");
 		try (BufferedWriter bufferedWriter = Files.newBufferedWriter(arquivo, StandardCharsets.ISO_8859_1,
 				StandardOpenOption.APPEND)) {
