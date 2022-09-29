@@ -1,20 +1,14 @@
 package Aula06;
 
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.Random;
-import java.util.UUID;
 
 public class BubbleSort {
 
 	//Uma constante para determinar o tamanho do vetor, o que define é o final
-	private static final Integer TAMANHO_VETOR = 100000000;
+	private static final Integer TAMANHO_VETOR = 500;
 
 	public static void main(String[] args) throws IOException {
 		System.out.println(BubbleSort.class + " - Ordenando aguarde...");
@@ -26,7 +20,7 @@ public class BubbleSort {
 		for (int i = 0; i <= TAMANHO_VETOR - 1; i++)
 			valores[i] = random.ints(1, TAMANHO_VETOR).findAny().getAsInt();
 		
-		gerarArquivo(valores, "entrada");
+		GerarArquivos.gerarArquivo(valores, "entrada");
 
 		//Instant.now retorna a data hora minutos e segundos
 		Instant start = Instant.now();
@@ -48,19 +42,7 @@ public class BubbleSort {
 		Instant end = Instant.now();
 		System.out.println(BubbleSort.class + " - ##### Duração da ordenação: " + Duration.between(start, end));
 
-		gerarArquivo(valores, "saida");
-	}
-
-	//Metodo para gerar o arquivo, cria as entradas linha a linha
-	private static void gerarArquivo(Integer valores[], String suffix) throws IOException {
-		System.out.println(BubbleSort.class + " - Gravando em um arquivo");
-		Path bubbleSortDiretorio = Files
-				.createDirectory(Paths.get("./bubbleSortDiretorio-" + suffix + "-" + UUID.randomUUID()));
-		Path bubbleSortArquivo = Files.createFile(bubbleSortDiretorio.resolve("bubbleSort-" + suffix + ".txt"));
-		for (Integer valor : valores)
-			Files.write(bubbleSortArquivo, (valor + "\r\n").getBytes(StandardCharsets.ISO_8859_1),
-					StandardOpenOption.APPEND);
-		System.out.println(BubbleSort.class + " - Arquivo gerado com sucesso");
+		GerarArquivos.gerarArquivo(valores, "saida");
 	}
 
 }
